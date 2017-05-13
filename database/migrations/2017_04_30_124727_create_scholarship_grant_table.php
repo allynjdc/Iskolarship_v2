@@ -13,7 +13,7 @@ class CreateScholarshipGrantTable extends Migration
      */
     public function up()
     {
-        Schema::create('scholarship_grant', function (Blueprint $table) {
+        Schema::create('scholarship_grants', function (Blueprint $table) {
             $table->increments('scholarship_grantID');
             $table->integer('scholarship_id')->references('scholarship_id')->on('scholarship');
             $table->string('scholarship_grantDesc');
