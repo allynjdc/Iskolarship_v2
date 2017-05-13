@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notifiable;
 
 class ScholarshipGrant extends Model
 {
-     use Notifiable;
+    use Notifiable;
     protected $primaryKey = 'scholarship_grantID';
     protected $table = 'scholarship_grant';
 
@@ -16,6 +16,11 @@ class ScholarshipGrant extends Model
      *
      * @var array
      */
+     
+    public function scholarship(){
+        return $this->belongsTo('App\Scholarship');
+    }     
+     
     protected $fillable = [
  		'scholarship_id',
     	'scholarship_grantDesc',    
