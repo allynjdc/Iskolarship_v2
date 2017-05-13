@@ -13,9 +13,9 @@ class CreateSponsorAccountTable extends Migration
      */
     public function up()
     {
-        Schema::create('sponsor_account', function (Blueprint $table) {
+        Schema::create('sponsors', function (Blueprint $table) {
             $table->increments('sponsor_id');
-            $table->integer('user_id')->references('user_id')->on('users');
+            $table->integer('user_id')->references('user_id')->on('user_account');
             $table->string('sponsor_fname');
             $table->string('sponsor_lname');
             $table->string('sponsor_address');
