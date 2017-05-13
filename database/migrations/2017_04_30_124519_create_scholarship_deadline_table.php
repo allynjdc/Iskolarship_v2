@@ -13,7 +13,7 @@ class CreateScholarshipDeadlineTable extends Migration
      */
     public function up()
     {
-        Schema::create('scholarship_deadline', function (Blueprint $table) {
+        Schema::create('scholarships_deadlines', function (Blueprint $table) {
             $table->increments('scholarship_deadlineID');
             $table->integer('scholarship_id')->references('scholarship_id')->on('scholarship');
             $table->timestamp('scholarship_deadlinestartdate');
