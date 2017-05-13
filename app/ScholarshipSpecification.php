@@ -16,6 +16,11 @@ class ScholarshipSpecification extends Model
      *
      * @var array
      */
+
+    public function scholarship(){
+        return $this->belongsTo('App\Scholarship');
+    }     
+     
     protected $fillable = [
  		'scholarship_id',
     	'scholarship_specDesc',    
