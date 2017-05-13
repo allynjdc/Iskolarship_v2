@@ -13,7 +13,7 @@ class CreateScholarshipSpecificationTable extends Migration
      */
     public function up()
     {
-        Schema::create('scholarship_specification', function (Blueprint $table) {
+        Schema::create('scholarship_specifications', function (Blueprint $table) {
             $table->increments('scholarship_specID');
             $table->integer('scholarship_id')->references('scholarship_id')->on('scholarship');
             $table->string('scholarship_specDesc');
