@@ -5,9 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Scholarships extends Model
-{
-     use Notifiable;
+class Scholarships extends Model {
+     
+    use Notifiable;
+     
     protected $primaryKey = 'scholarship_id';
     protected $table = 'scholarship';
 
@@ -16,7 +17,11 @@ class Scholarships extends Model
      *
      * @var array
      */
-    protected $fillable = [
+     
+     public function sponsor(){
+         return $this->belongsTo('App\Sponsor');
+     }
+     protected $fillable = [
  		'sponsor_id',
     	'scholarship_name',
         'scholarship_desc' ,
