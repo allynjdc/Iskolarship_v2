@@ -5,12 +5,17 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Sponsor extends Model{
-
-	use Notifiable;
+class Sponsor extends Model {
+    
+    use Notifiable;
+	
     protected $primaryKey = 'sponsor_id';
     protected $table = 'sponsor_account';
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+	
     protected $fillable = [
         'user_id',
     	'sponsor_fname',
@@ -20,6 +25,4 @@ class Sponsor extends Model{
         'sponsor_agency',
         'sponsor_agencyaddress'       
     ];
-
-
 }
